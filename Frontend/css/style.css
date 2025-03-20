@@ -1,0 +1,81 @@
+/* TOPBAR */
+* {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.top_bar {
+  display: flex;
+  height: 100px; /* Fixed height for the top bar */
+  width: 100%; /* Full width of the viewport */
+  flex-direction: row;
+  align-items: center; /* Vertically center all items */
+  padding: 5px;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: #d1c86c;
+  justify-content: space-between; /* Space out the logo, categories, and right cluster */
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: black; /* Set default text color */
+}
+
+/* Hover effect for links */
+.topbar-categories_cluster a:hover,
+.topbar-right_cluster-item:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  display: flex;
+  height: 100%; /* Make the logo take up the full height of the top bar */
+  align-items: center; /* Center the logo vertically */
+}
+
+.logo img {
+  max-height: 100%; /* Ensure the logo image doesn't exceed the height of the top bar */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.topbar-categories_cluster {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; /* Space between the links */
+  align-items: center; /* Vertically center the links */
+  height: 100%; /* Take up the full height of the top bar */
+  font-weight: bold;
+}
+
+.topbar-right_cluster {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; /* Space between the items */
+  align-items: center; /* Vertically center the items */
+  height: 100%; /* Take up the full height of the top bar */
+}
+
+.topbar-right_cluster-item {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-items: center;
+  align-items: center; /* Vertically center the login button and image */
+  height: 100%; /* Take up the full height of the top bar */
+  text-decoration: none; /* Remove underline from the link */
+  color: black; /* Set text color */
+}
+
+.topbar-right_cluster-item img {
+  max-height: 100%; /* Constrain the image height to 80% of the top bar height */
+  width: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Add some space between the text and the image */
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
