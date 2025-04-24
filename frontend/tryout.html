@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/Frontend/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>Home</title>
+</head>
+<body>
+  <!-- TOPBAR WILL BE INSERTED HERE -->
+  <div id="topbar-container"></div>
+  <p>Open the console to see the output</p> 
+  <!-- REST OF YOUR PAGE CONTENT GOES HERE -->
+  
+  <script>
+    // Load topbar
+    fetch('/Frontend/components/topbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('topbar-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading topbar:', error));
+  </script>
+</body>
+</html>
