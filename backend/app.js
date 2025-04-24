@@ -1,30 +1,31 @@
 //Environment configuration (always on the top!)
-require('dotenv').config({
+dotenv.config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 });
 
 // Importing required modules
-const express = require('express');
+import express, { json, urlencoded } from 'express';
 const app = express();
 
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');//for logging in, more complicated, will not need
-const createError = require('http-errors');
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';//for logging in, more complicated, will not need
+import createError from 'http-errors';
 
-const productController = require('./controllers/productController'); //changed to productController //only in Exercises class
-const usersRouter = require('./routes/users');
-const authRouter = require('./routes/auth'); //added for login
+import productController from './controllers/productController.js'; //changed to productController //only in Exercises class
+import usersRouter from './routes/users.js';
+import authRouter from './routes/auth.js'; //added for login
+import dotenv from 'dotenv';
 
 
 // const port = 3000; NO LONGER NEEDED thx to dotenv->env
 
 // Middleware setup
-app.use(express.json());
+app.use(json());
 app.use(logger('dev'));
 // Middleware for parsing JSON and URL-encoded data
 
-app.use(express.urlencoded({ extended: true }));
+app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 //serving static files from the frontend directory
 // app.use(express.static(path.join(__dirname, '../frontend'))) 
@@ -71,4 +72,4 @@ app.use(function(err, req, res, next) {
 });
   
 
-module.exports = app;
+export default app;

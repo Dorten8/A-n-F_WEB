@@ -31,4 +31,4 @@ class ProductModel {
   }
 }
 
-export default new ProductModel(); // Export instance
+export default ProductModel; // Export instance

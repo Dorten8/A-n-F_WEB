@@ -6,7 +6,7 @@ const mockUser = [
     }
 ];
 
-const loginUser = async (req, res, next) => {
+export const loginUser = async (req, res, next) => {
     try{
         
     const { username, password } = req.body;
@@ -44,6 +44,3 @@ const loginUser = async (req, res, next) => {
     }
 };
 
-module.exports = {
-    loginUser,
-};
